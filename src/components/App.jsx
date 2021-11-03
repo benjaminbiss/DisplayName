@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import NameList from './NameList/NameList';
 import DisplayNames from './DisplayName/DisplayNames';
+import Alert from './Alert/Alert';
 
 class App extends Component {
     constructor(props){
@@ -8,8 +9,13 @@ class App extends Component {
         this.state = {
             firstName: 'Reggie',
             lastName: 'White',
-            names: ['Mike', 'Nevin', 'Aaron', 'Tory', 'Kelly']
+            names: ['Mike', 'Nevin', 'Aaron', 'Tory', 'Kelly'],
+            alert: this.alertOnClick
         };
+    }
+
+    alertOnClick = () => {
+        alert('devCodeCamp');
     }
 
     render(){
@@ -17,6 +23,7 @@ class App extends Component {
             <div>
                 <DisplayNames firstName={this.state.firstName} lastName={this.state.lastName}/>
                 <NameList listOfNames={this.state.names}/>
+                <Alert alert={this.state.alert}/>
             </div>
         )
     }
