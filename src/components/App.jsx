@@ -3,6 +3,7 @@ import NameList from './NameList/NameList';
 import DisplayNames from './DisplayName/DisplayNames';
 import Alert from './Alert/Alert';
 import Superheroes from './Superheroes/Superheroes';
+import SuperheroCreate from './SuperheroCreate/SuperheroCreate';
 
 class App extends Component {
     constructor(props){
@@ -45,7 +46,8 @@ class App extends Component {
                 <DisplayNames firstName={this.state.firstName} lastName={this.state.lastName}/>
                 <NameList listOfNames={this.state.names}/>
                 <Alert alert={this.state.alert}/>
-                <Superheroes superheroes={this.state.superheroes}/>
+                <Superheroes superheroes={this.state.superheroes} addHero={this.state.addHero}/>
+                <SuperheroCreate />
             </div>
         )
     }
